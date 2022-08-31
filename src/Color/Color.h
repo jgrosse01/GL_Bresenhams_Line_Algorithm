@@ -19,7 +19,7 @@ private:
 
 public:
     Color();
-    Color(int* rgba);
+    Color(int* rgba, bool alpha);
     Color(int red, int green, int blue);
     Color(int red, int green, int blue, int alpha);
 

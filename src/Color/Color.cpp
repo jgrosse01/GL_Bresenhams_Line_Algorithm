@@ -25,11 +25,11 @@ Color::Color() {
     makeRandomColor();
 }
 
-Color::Color(int* rgba) {
-    try {
-
-    } catch () {
-
+Color::Color(int* rgba, bool alpha) {
+    if (alpha) {
+        Color::rgba_arr = rgba;
+    } else {
+        makeRandomColor(255);
     }
 }
 
@@ -58,11 +58,11 @@ void Color::setColor(int red, int green, int blue, int alpha) {
 }
 
 void Color::setRColor() {
-    Color::setColor(makeRandomColor());
+    makeRandomColor();
 }
 
 void Color::setRColor(int alpha) {
-    Color::setColor(makeRandomColor(alpha));
+    makeRandomColor(alpha);
 }
 
 int Color::getRed() {
@@ -82,7 +82,7 @@ int Color::getAlpha() {
 }
 
 int* Color::getColor() {
-    int rgb[3];
+    int* rgb = new int[3];
     for (int i = 0; i < 3; i++) {
         rgb[i] = Color::rgba_arr[i];
     }

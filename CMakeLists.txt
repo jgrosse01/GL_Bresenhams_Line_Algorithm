@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.23)
-project(Upgraded_Random_Noise)
+project(Bresenham_Line)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Upgraded_Random_Noise src/main.cpp src/Color/Color.cpp src/Color/Color.h)
+file(GLOB_RECURSE SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp ${CMAKE_SOURCE_DIR}/src/*.h)
+
+find_package(OpenGL REQUIRED)
+
+add_executable(${PROJECT_NAME} ${SRC_FILES})
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${OPENGL_LIBRARIES} -lfreeglut)
