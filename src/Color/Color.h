@@ -10,8 +10,6 @@
 
 class Color {
 private:
-    static std::random_device planter;
-    static std::ranlux24 gen;
     static int black[4];
     int* rgba_arr{};
 

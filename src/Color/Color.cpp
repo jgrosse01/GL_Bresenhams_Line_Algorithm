@@ -7,10 +7,10 @@
 
 int* rgba_arr;
 static int black[4] = {0,0,0,0};
-static std::random_device planter;
-static std::ranlux24 gen(planter());
 
 void Color::makeRandomColor(int alpha = 255) {
+    std::random_device planter;
+    std::ranlux24 gen(planter());
     std::uniform_int_distribution<int> dist(0,255);
     int* color = new int[4];
     for (int i = 0; i < 3; i++) {

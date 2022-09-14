@@ -9,15 +9,14 @@
 #include <stdlib.h>
 #include <math.h>
 #include <GL/freeglut.h>
-
-int*** ppm_img;
+#include <iostream>
+#include <vector>
 
 void init();
 void display();
 void reshape(int w, int h);
 void idle();
-// ?????
-void writeScreenToPPMIMG();
-void readPPMIMGToScreen();
+
+void bresenham(int x1, int y1, int x2, int y2);
 
 #endif //Window_h
